@@ -1,0 +1,82 @@
+{
+  "product": [
+    {
+      "name": "Самсунг",
+      "article": "СамсАртикул",
+      "price": 20,
+      "manufacturer": "ПроизволительСамсунга",
+      "categoryId": 4,
+      "weight": 12,
+      "inStock": 43,
+      "id": 1
+    },
+    {
+      "name": "Мертвые души",
+      "article": "Н. В. Гоголь",
+      "price": 590,
+      "manufacturer": "books",
+      "categoryId": 3,
+      "weight": "0,5",
+      "inStock": 36,
+      "id": 2
+    },
+    {
+      "name": "Диван",
+      "article": "Хороший диван",
+      "price": 50000,
+      "manufacturer": "Производитель диванов",
+      "categoryId": 1,
+      "weight": "200",
+      "inStock": 40,
+      "id": 3
+    },
+    {
+      "name": "Эпл",
+      "article": "Apple",
+      "price": 80000,
+      "manufacturer": "Эпл",
+      "categoryId": 4,
+      "weight": "0,3",
+      "inStock": 33,
+      "id": 4
+    },
+    {
+      "name": "Шкаф",
+      "article": "Коричневый",
+      "price": 10000,
+      "manufacturer": "",
+      "categoryId": 1,
+      "weight": "12",
+      "inStock": 0,
+      "id": 5
+    },
+    {
+      "name": "Духовка",
+      "article": "бытовой прибор",
+      "price": 5000,
+      "manufacturer": "ТЕХНО",
+      "categoryId": 2,
+      "weight": "10",
+      "inStock": 11,
+      "id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Мебель"
+    },
+    {
+      "id": 2,
+      "name": "Техника"
+    },
+    {
+      "id": 3,
+      "name": "Книги"
+    },
+    {
+      "id": 4,
+      "name": "Телефоны"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-12">
+      <div style="width:200px">
+
+  </div>
+    <div><h3>Фильтры:</h3>
+    <div>Выбрать категорию:
+      <select [(ngModel)]="positionName" (change)="OnSelChanged(positionName)" 
+      class="form-select" aria-label="Default select example" >
+      <option [selected]>Показать все</option>
+        <option *ngFor="let category of categories;">{{category.name}} </option>
+    </select>
+    </div>
+    <div>
+      <div class="col-12">
+        <div >
+          <br>
+            <input type="checkbox" 
+             class="form-check-input"
+             [(ngModel)]="isInStock"
+              (change)="OnBoolChanged(isInStock)"
+             >
+            
+            <label class="form-check-label">Показать только товары в наличии</label>
+            <br>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Артикул</th>
+        <th (click)="sortByPrice(true)"><img  class = "picture" src="https://cdn.icon-icons.com/icons2/685/PNG/512/arrowupdown_icon-icons.com_61201.png" alt="">Цена</th> 
+        <th>Производитель</th>
+        <th>Категория</th>
+        <th>Вес</th>
+        <th (click)="sortByInStock(true)"><img  class = "picture" src="https://cdn.icon-icons.com/icons2/685/PNG/512/arrowupdown_icon-icons.com_61201.png" alt="">Количество на складе</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" >
+        <td (click)="linkToItem(product.id)">{{product.name}}</td>
+        <td (click)="linkToItem(product.id)">{{product.article}}</td>
+        <td (click)="linkToItem(product.id)">{{product.price}}</td>
+        <td (click)="linkToItem(product.id)">{{product.manufacturer}}</td>
+        <td (click)="linkToItem(product.id)">{{getCategoryNameById(product.categoryId)}}</td>
+        <td (click)="linkToItem(product.id)">{{product.weight}}</td>
+        <td [style.paddingBottom]="'0px'" [style.paddingTop]="'0px'"><div  [style.width]="'60px'" [style.height]="'100%'" [style.display]="'inline-block'"  (click)="linkToItem(product.id)" >{{product.inStock}}</div>
+          <div [style.display]="'inline-block'">
+            <button id="minus-btn"  type="button" class="btn btn-danger" (click)="inStockUpDown(false, product.id)">-</button>
+            <button id="plus-btn"  type="button" class="btn btn-dark" (click)="inStockUpDown(true, product.id)">+</button>
+
+          </div>
+        </td>
+       
+      
+      </tr>
+  
+    </tbody>
+  </table></div>
+</div>
+<button class="btn btn-secondary" (click)="linkToItem()">Добавление</button>
+</div>

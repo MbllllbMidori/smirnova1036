@@ -1,0 +1,103 @@
+<form [formGroup]="productForm" (ngSubmit)="save()">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="name">Наименование:</label>
+                <input type="text" class="form-control" id="name" placeholder="Наименование" formControlName="name"
+                    [ngClass]="{'has-error':
+                    productForm.get('name')?.invalid &&
+                    productForm.get('name')?.touched }">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="article">Артикул:</label>
+                <input type="text" class="form-control" id="article" placeholder="Артикул" 
+                formControlName="article"
+                    [ngClass]="{'has-error':
+                        productForm.get('article')?.invalid &&
+                        productForm.get('article')?.touched }">
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="price">Цена, руб:</label>
+                <input type="number" class="form-control" id="price" placeholder="Цена, руб" 
+                formControlName="price" [ngClass]="{'has-error':
+                        productForm.get('price')?.invalid &&
+                        productForm.get('price')?.touched }">
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="manufacturer">Производитель:</label>
+                <input type="text" class="form-control" id="manufacturer" placeholder="Производитель"
+                 formControlName="manufacturer" [ngClass]="{'has-error':
+                        productForm.get('manufacturer')?.invalid &&
+                        productForm.get('manufacturer')?.touched }">
+               
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="categoryId">Категория:</label>
+                 <select class="form-select" aria-label="Default select example" formControlName="categoryId">
+                        <option *ngFor="let category of categories; " [ngValue]="category.id">{{category.name}}</option>
+                    </select> 
+                
+
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="weight">Вес, кг:</label>
+                <input type="text" class="form-control" id="weight" placeholder="Вес, Кг" 
+                formControlName="weight" [ngClass]="{'has-error':
+                        productForm.get('weight')?.invalid &&
+                        productForm.get('weight')?.touched }">
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="inStock">Количество на складе:</label>
+                <input type="text" class="form-control" id="inStock" placeholder="Кол-во" 
+                formControlName="inStock" [ngClass]="{'has-error':
+                        productForm.get('inStock')?.invalid &&
+                        productForm.get('inStock')?.touched }">
+                
+
+            </div>
+        </div>
+    </div>
+
+<br>
+    <div class="row">
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Сохранить</button>
+            <button type="button" class="btn btn-danger ms-2" *ngIf="id" (click)="delete()" [routerLink]="'/products'">Удалить товар</button>
+        </div>
+    </div>
+
+</form>
